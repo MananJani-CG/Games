@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, Segoe UI, Arial;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px
+}
+
+@keyframes shake {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(-6px) }
+    50% { transform: translateX(6px) }
+    75% { transform: translateX(-4px) }
+    100% { transform: translateX(0) }
+}
+
+.animate-shake {
+    animation: shake .4s;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
