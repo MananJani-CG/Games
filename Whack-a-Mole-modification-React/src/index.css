@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Arial', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Custom Hole styling to keep the exact background and clip */
+.hole {
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, #8B4513 0%, #654321 100%);
+  border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Mole logic mapping */
+.mole {
+  width: 80%;
+  height: 80%;
+  background: #8B4513;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: bottom 0.2s;
+}
+
+.mole::before {
+  content: '🐹';
+  font-size: 3em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mole.up {
+  bottom: 20%;
+}
+
+.mole.bonked {
+  bottom: -100%;
+}
+
+@media (max-width: 600px) {
+  .hole {
+      height: 120px;
+  }
+}
